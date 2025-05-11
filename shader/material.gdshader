@@ -17,7 +17,7 @@ void fragment() {
     float dX = (height_r - height_l);
     float dY = (height_d - height_u);
 
-    // Normal modificada dee cada píxel
+    // Normal modificada de cada píxel
     vec3 bumped_normal = normalize(vec3(-dX * bump_strength, -dY * bump_strength, 1.0));
 
     // Return
