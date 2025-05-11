@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb5n7in5heq5e"]
+
+[ext_resource type="Shader" uid="uid://cbgfnucjm8rfj" path="res://shader/material.gdshader" id="1_865ah"]
+[ext_resource type="Texture2D" uid="uid://d62gitbnr53w" path="res://material/rock.jpg" id="2_ugwex"]
+[ext_resource type="PackedScene" uid="uid://dl2wtuxa6p5tn" path="res://camara.tscn" id="3_sks45"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sks45"]
+render_priority = 0
+shader = ExtResource("1_865ah")
+shader_parameter/bump_texture = ExtResource("2_ugwex")
+shader_parameter/bump_strength = 10.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sks45"]
+material = SubResource("ShaderMaterial_sks45")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="camara" parent="." instance=ExtResource("3_sks45")]
+transform = Transform3D(0.999994, 0.00257453, -0.00252045, 0.00225694, 0.0976699, 0.995216, 0.0028084, -0.995216, 0.0976634, 0, 4.22203, 1.17232)
+script = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_sks45")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.979452, 0.201676, 0, -0.201676, 0.979452, -0.106682, 0.612878, 1.79486)
